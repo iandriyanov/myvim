@@ -1,0 +1,41 @@
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+argglobal
+setlocal fdm=expr
+setlocal fde=pymode#folding#expr(v:lnum)
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+9
+normal zo
+20
+normal zo
+22
+normal zo
+26
+normal zo
+31
+normal zo
+54
+normal zo
+56
+normal zo
+63
+normal zo
+84
+normal zo
+88
+normal zo
+105
+normal zo
+let s:l = 68 - ((14 * winheight(0) + 29) / 59)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+68
+normal! 042l
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+" vim: set ft=vim :
